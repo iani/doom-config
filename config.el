@@ -60,21 +60,15 @@
   (setq
          org-super-agenda-group-property-name
          "ProjectId"
-         org-super-agenda-groups '(
-                                   (:auto-group t);
-                                  (:name "Today"
-                                   :time-grid t
-                                   :scheduled today)
-                                  (:name "Due today"
-                                   :deadline today)
-                                  (:name "Important"
-                                   :priority "A")
-                                  (:name "Overdue"
-                                   :deadline past)
-                                  (:name "Due soon"
-                                   :deadline future)
-                                  (:name "Big Outcomes"
-                                   :tag "bo")))
+         org-super-agenda-groups
+         '(
+           (:auto-group t);
+           (:name "Today" :time-grid t :scheduled today)
+           (:name "Due today" :deadline today)
+           (:name "Important" :priority "A")
+           (:name "Overdue" :deadline past)
+           (:name "Due soon" :deadline future)
+           (:name "Big Outcomes" :tag "bo")))
   :config
   (org-super-agenda-mode))
 
