@@ -52,3 +52,5 @@
 (package! org-super-agenda)
 (package! multi-term)
 (package! undo-tree)
+(package! neotree)
+;; (package! ox-latex)

@@ -94,10 +94,14 @@
        (:prefix ("j" . "journal")
         :desc "New journal entry" "j" #'org-journal-new-entry
         :desc "Search journal entry" "s" #'org-journal-search))
-      (:prefix-map ("j" . "sclang")
-       (:prefix ("l" . "recompile sc-class library")
-        :desc "New journal entry" "j" #'org-journal-new-entry
-        :desc "Search journal entry" "s" #'org-journal-search))
+      (:prefix-map ("j" . "supercollider")
+       (:prefix ("l" . "sclang")
+        :desc "recompile library" "l" #'sclang-recompile
+        :desc "start sclang" "s" #'sclang-start
+        :desc "quit sclang" "q" #'sclang-quit
+        :desc "run server config scripts" "c" #'sclang-server-config
+ :desc "browse builtin classes" "b" #'sclang-browse-definitions
+        :desc "browse user extension classes" "e" #'sclang-browse-extensions))
       (:prefix-map ("l" . "latex")
        (:prefix ("s" . "subtree")
         :desc "pdflatex -> pdf" "p" #'org-journal-new-entry
