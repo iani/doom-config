@@ -26,11 +26,10 @@
     (re-search-forward "\)\n//:" nil t)
     (replace-match "\n://:")))
 
-
 (defun sclang-server-plot-tree ()
   "Open plotTree for default server."
   (interactive)
-  (sclang-eval-string "Server.default.plotTree"))'
+  (sclang-eval-string "Server.default.plotTree"))
 
 (defun sclang-server-meter ()
   "Open i/o meter for default server."
@@ -66,14 +65,14 @@
   (sclang-eval-string
    (concat "\"" path "\".playAudioFile")))
 
-;; (define-key dired-mode-map (kbd "C-c C-p") 'dired-play-soundfile-in-sclang)
+;; ;; (define-key dired-mode-map (kbd "C-c C-p") 'dired-play-soundfile-in-sclang)
 
 (defun sclang-stop-soundfile ()
   "Stop playing soundfile player."
   (interactive)
   (sclang-eval-string "\\diskplayback.stop"))
 
-;; (define-key dired-mode-map (kbd "C-c C-s") 'sclang-stop-soundfile)
+;; ;; (define-key dired-mode-map (kbd "C-c C-s") 'sclang-stop-soundfile)
 
 (defun sclang-insert-+> ()
   "Insert +>."
@@ -104,4 +103,11 @@
   (interactive)
   (sclang-eval-string "Class.extensionsGui;"))
 
-(defun sclang-reboot-serveroptions)
+(defun sclang-reset-server-options ()
+  "Reset server options from scripts of sc-hacks.
+Run all scd files found in ~/sc-hacks-config/serveroptions
+or its subdirectories."
+  (interactive)
+  ;; TODO : implement this ...
+  (sclang-eval-string "Hacks.serverConfig")
+  )
