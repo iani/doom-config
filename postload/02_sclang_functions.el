@@ -5,12 +5,12 @@
 ; (add-hook 'sclang-mode-hook 'sclang-extensions-mode)
 
 ;; start jack
-(defun start-jack ()
+(defun sclang-start-jack ()
   "Start jackd."
   (interactive)
   (async-shell-command " jackd -r -d alsa -r 44100"))
 
-(defun scundelify ()
+(defun sclang-scundelify ()
   "Convert //: snippet blocks to regular style () sc blocks in document."
   (interactive)
   (save-excursion
