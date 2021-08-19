@@ -88,6 +88,9 @@
 ;; j -> supercollider 1
 ;; ? k -> supercollider 2?
 (map! :leader
+      (:prefix-map ("e" . "input encoding")
+       :desc "greek" "g" #'set-encoding-greek
+       :desc "english ucs" "e" #'set-encoding-ucs)
       (:prefix-map ("k" . "scsynth")
        :desc "boot server" "b" #'sclang-server-boot
        :desc "start jack" "j" #'sclang-start-jack

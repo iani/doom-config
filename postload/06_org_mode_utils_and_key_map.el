@@ -149,6 +149,7 @@
      ;; (define-key org-mode-map (kbd "C-c U") 'prelude-duckduckgo)
      ;;     ;; mimic popular IDEs binding, note that it doesn't work in a terminal session
      (define-key org-mode-map [(shift return)] 'crux-smart-open-line)
+     (define-key org-mode-map [(meta return)] 'org-insert-heading)
      (define-key org-mode-map (kbd "M-o") 'crux-smart-open-line)
      (define-key org-mode-map [(control shift return)] 'crux-smart-open-line-above)
      (define-key org-mode-map [(control shift up)]  'move-text-up)
