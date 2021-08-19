@@ -9,3 +9,10 @@
   "Set input encoding to english (ucs)."
   (interactive)
   (set-input-method 'ucs))
+
+(defun toggle-encoding ()
+  "Toggle encoding between greek and ucs."
+  (interactive)
+  (if (equal current-input-method "greek")
+      (set-input-method 'ucs)
+    (set-input-method 'greek)))

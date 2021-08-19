@@ -88,9 +88,10 @@
 ;; j -> supercollider 1
 ;; ? k -> supercollider 2?
 (map! :leader
-      (:prefix-map ("e" . "input encoding")
-       :desc "greek" "g" #'set-encoding-greek
-       :desc "english ucs" "e" #'set-encoding-ucs)
+      ;; (:prefix-map ("e" . "input encoding")
+       :desc "toggle input encoding method" "e" #'toggle-encoding
+       ;; :desc "toggle" "t" #'toggle-encoding
+       ;; :desc "english ucs" "e" #'set-encoding-ucs)
       (:prefix-map ("k" . "scsynth")
        :desc "boot server" "b" #'sclang-server-boot
        :desc "start jack" "j" #'sclang-start-jack
@@ -131,23 +132,3 @@
 ;; beaver / biblatex ...
 ;; open last exported pdf
 ;; compile index
-;;
-;; supercollider commands - find way to bind them
-;; recompile sc-class library
-;; start supercollider sclang
-;; quit supercollider sclang
-;; command-period
-;; find definition in sc gui.
-;; boot server
-;; quit server
-;; server meter
-;; server audio scope
-;; server control scope
-;; server freq scope
-;; server tree
-;; server kill all servers
-;; trace osc
-;; stop tracing osc
-;; enable osc groups
-;; disable osc groups
-;;
