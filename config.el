@@ -52,6 +52,9 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+(use-package! projectile
+  :init
+  (setq projectile-switch-project-action #'projectile-commander))
 
 (use-package! org-super-agenda
   :after org-agenda
@@ -78,16 +81,8 @@
       :desc "multi-term"
       "m t" #'multi-term)
 
-;;; experimental - from :
-;; https://rameezkhan.me/adding-keybindings-to-doom-emacs/
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Note: free <space.-initial keys are:
-;; j, k, l, y, z.
-;; Using:
-;; l -> latex
-;; j -> supercollider 1
-;; ? k -> supercollider 2?
 (map! :leader
+      :desc "find folder in project" "p F" #'projectile-find-dir
       ;; (:prefix-map ("e" . "input encoding")
        :desc "toggle input encoding method" "e" #'toggle-encoding
        ;; :desc "toggle" "t" #'toggle-encoding
