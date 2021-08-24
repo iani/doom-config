@@ -1,59 +1,10 @@
 ;;; org_mode_utils_and_key_map --- 2019-06-29 08:08:23 AM
-  ;;; Commentary:
+;;; Commentary:
 
-  ;;; utils and key map
+;;; utils and key map
 
-  ;;; Code:
+;;; Code:
 
-(defun org-set-done-date ()
-  "Set DATE_DONE property with time from user. Inactive timestamp."
-  (interactive)
-  (org-set-property
-   "DATE_DONE"
-   (concat
-           "["
-           (substring
-            (format-time-string (cdr org-time-stamp-formats) (org-read-date t t))
-            1 -1)
-           "]")))
-
-(defun org-set-date-inactive ()
-  "Set DATE property with current time. Inactive timestamp."
-  (interactive)
-  (funcall 'org-set-date '(16)) b)
-
-(defun org-set-date (&optional active property)
-  "Set DATE property with current time, in style according to prefix argument."
-  (interactive "P")
-  (org-set-property
-   (if property property "DATE")
-   (cond ((equal active nil)
-          (format-time-string (cdr org-time-stamp-formats) (current-time)))
-         ((equal active '(64))
-          (concat "["
-                  (substring
-                   (format-time-string (cdr org-time-stamp-formats) (current-time))
-                   1 -1)
-                  "]"))
-         ((equal active '(16))
-          (concat
-           "["
-           (substring
-            (format-time-string (cdr org-time-stamp-formats) (org-read-date t t))
-            1 -1)
-           "]"))
-         ((equal active '(4))
-          (format-time-string (cdr org-time-stamp-formats) (org-read-date t t))))))
-
-(defun org-insert-current-date (arg)
-  "Insert current date in format readable for org-capture minibuffer.
-        If called with ARG, use japanese/american military format YYMMDD."
-  (interactive "P")
-  (if arg
-      (insert (format-time-string "%y%m%d"))
-    (insert (format-time-string "%e %b %Y %H:%M"))))
-
-        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; make heading movement commands skip initial * marks
 (defun org-jump-forward-heading-same-level (&optional do-cycle)
   "Jump forward heading same level, and skip to beginning of heading itself."
@@ -124,7 +75,9 @@
      ;; C-c . -> org-time-stamp
      (define-key org-mode-map (kbd "M-S-<down>") 'org-shiftmetadown)
      (define-key org-mode-map (kbd "M-<down>") 'org-metadown)
-     (define-key org-mode-map (kbd "C-c C-.") 'org-set-date)
+     (define-key org-mode-map (kbd "C-c C-.") 'org-set-date-from-user-inactive)
+     (define-key org-mode-map (kbd "C-c M-.") 'org-set-date-from-user-active)
+     (define-key org-mode-map (kbd "C-c /") 'org-set-done-date)
      (define-key org-mode-map (kbd "C-M-{") 'backward-paragraph)
      (define-key org-mode-map (kbd "C-M-}") 'forward-paragraph)
      (define-key org-mode-map (kbd "C-c C-S") 'org-schedule)
