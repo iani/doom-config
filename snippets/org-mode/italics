@@ -1,0 +1,4 @@
+#name : italics
+# key: /italics
+# --
+\textit{`%`$1}$0

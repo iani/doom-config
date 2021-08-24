@@ -1,0 +1,3 @@
+[submodule "snippets/sclang"]
+	path = snippets/sclang
+	url = https://github.com/ptrv/sclang-snippets.git

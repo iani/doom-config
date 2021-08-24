@@ -77,11 +77,14 @@
   :config
   (global-undo-tree-mode))
 
-(map! :leader
-      :desc "multi-term"
-      "m t" #'multi-term)
+;; (map!
+;;  ;mode dired
+;;  :desc "create symbolic link" "S" #'dired-do-symlink
+;;  )
 
 (map! :leader
+      :desc "calendar" "o c" #'calendar
+      :desc "calendar" "o C" #'calc
       :desc "find folder in project" "p F" #'projectile-find-dir
       ;; (:prefix-map ("e" . "input encoding")
        :desc "toggle input encoding method" "e" #'toggle-encoding
