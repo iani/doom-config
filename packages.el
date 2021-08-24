@@ -53,4 +53,5 @@
 ;; (package! multi-term)
 (package! undo-tree)
 (package! neotree)
+(package! origami)
 ;; (package! ox-latex)

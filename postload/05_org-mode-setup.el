@@ -105,6 +105,7 @@
      (define-key org-mode-map (kbd "M-<down>") 'org-metadown)
      (define-key org-mode-map (kbd "C-c C-.") 'org-set-date)
      (define-key org-mode-map (kbd "C-c M-.") 'org-set-date-inactive)
+     (define-key org-mode-map (kbd "C-c /") 'org-set-done-date)
      (define-key org-mode-map (kbd "C-M-{") 'backward-paragraph)
      (define-key org-mode-map (kbd "C-M-}") 'forward-paragraph)
      (define-key org-mode-map (kbd "C-c C-S") 'org-schedule)

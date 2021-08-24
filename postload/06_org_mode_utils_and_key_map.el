@@ -5,6 +5,18 @@
 
   ;;; Code:
 
+(defun org-set-done-date ()
+  "Set DATE_DONE property with time from user. Inactive timestamp."
+  (interactive)
+  (org-set-property
+   "DATE_DONE"
+   (concat
+           "["
+           (substring
+            (format-time-string (cdr org-time-stamp-formats) (org-read-date t t))
+            1 -1)
+           "]")))
+
 (defun org-set-date-inactive ()
   "Set DATE property with current time. Inactive timestamp."
   (interactive)
