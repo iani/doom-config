@@ -54,4 +54,6 @@
 (package! undo-tree)
 (package! neotree)
 (package! origami)
+(package! dired-open)
+
 ;; (package! ox-latex)

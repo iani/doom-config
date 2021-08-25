@@ -23,7 +23,14 @@
 (defun org-set-date-from-user-inactive ()
   "Set DATE property with current time. Inactive timestamp."
   (interactive)
-  (funcall 'org-set-date '(16)) "DATE")
+  (org-set-property
+   "DATE"
+   (concat
+           "["
+           (substring
+            (format-time-string (cdr org-time-stamp-formats) (org-read-date t t))
+            1 -1)
+           "]")))
 
 (defun org-set-date (&optional active property)
   "Set DATE property with current time, in style according to prefix argument."
@@ -55,28 +62,7 @@
   (if arg
       (insert (format-time-string "%y%m%d"))
     (insert (format-time-string "%e %b %Y %H:%M"))))
-(defun org-set-date-from-user-inactive (&optional property)
-  "Set DATE property with current time.  Active timestamp."
-  (interactive "P")
-  (org-set-property
-   (if property property "DATE")
-   (cond ((equal active nil)
-          (format-time-string (cdr org-time-stamp-formats) (current-time)))
-         ((equal active '(64))
-          (concat "["
-                  (substring
-                   (format-time-string (cdr org-time-stamp-formats) (current-time))
-                   1 -1)
-                  "]"))
-         ((equal active '(16))
-          (concat
-           "["
-           (substring
-            (format-time-string (cdr org-time-stamp-formats) (org-read-date t t))
-            1 -1)
-           "]"))
-         ((equal active '(4))
-          (format-time-string (cdr org-time-stamp-formats) (org-read-date t t))))))
+
 
 (defun org-insert-current-date (arg)
   "Insert current date in format readable for org-capture minibuffer.

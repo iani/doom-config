@@ -77,6 +77,14 @@
   :config
   (global-undo-tree-mode))
 
+(setq dired-open-extensions
+      '(("exe" . "wine") ("docx" . "libreoffice")
+        ("doc" . "libreoffice") ("xlsx" . "libreoffice")
+        ("xls" . "libreoffice")
+        ("mp3" . "mpv")
+        ("mp4" . "mpv")
+        ("flv" . "mpv")
+        ))
 ;; (map!
 ;;  ;mode dired
 ;;  :desc "create symbolic link" "S" #'dired-do-symlink
@@ -86,6 +94,7 @@
       :desc "calendar" "o c" #'calendar
       :desc "calendar" "o C" #'calc
       :desc "find folder in project" "p F" #'projectile-find-dir
+      :desc "org mark element" "o m" #'org-mark-element
       ;; (:prefix-map ("e" . "input encoding")
        :desc "toggle input encoding method" "e" #'toggle-encoding
        ;; :desc "toggle" "t" #'toggle-encoding

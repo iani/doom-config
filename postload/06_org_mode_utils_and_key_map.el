@@ -75,9 +75,11 @@
      ;; C-c . -> org-time-stamp
      (define-key org-mode-map (kbd "M-S-<down>") 'org-shiftmetadown)
      (define-key org-mode-map (kbd "M-<down>") 'org-metadown)
+     ;; mapping C-. and C-/ to user-inactive / user-active:
      (define-key org-mode-map (kbd "C-c C-.") 'org-set-date-from-user-inactive)
+     (define-key org-mode-map (kbd "C-c C-/") 'org-set-date-from-user-active) ;; yes!
      (define-key org-mode-map (kbd "C-c M-.") 'org-set-date-from-user-active)
-     (define-key org-mode-map (kbd "C-c /") 'org-set-done-date)
+     (define-key org-mode-map (kbd "C-c /") 'org-set-done-date) ;; yes!
      (define-key org-mode-map (kbd "C-M-{") 'backward-paragraph)
      (define-key org-mode-map (kbd "C-M-}") 'forward-paragraph)
      (define-key org-mode-map (kbd "C-c C-S") 'org-schedule)
