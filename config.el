@@ -26,7 +26,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 ;; (setq doom-theme 'doom-one)
-(setq doom-theme 'doom-dark+)
+(setq doom-theme 'doom-henna)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -113,7 +113,7 @@
        :desc "show post buffer" "p" #'sclang-show-post-buffer
        :desc "recompile library" "l" #'sclang-recompile
        :desc "start sclang" "s" #'sclang-start
-       :desc "quit sclang" "q" #'sclang-quit
+       :desc "stop sclang" "q" #'sclang-stop
        :desc "run server config scripts" "c" #'sclang-server-config
        :desc "browse builtin classes" "b" #'sclang-browse-definitions
        :desc "browse user extension classes" "e" #'sclang-extensions-gui)
