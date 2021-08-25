@@ -64,6 +64,7 @@
 ;; Add some org-mode specific key bindings.
 (eval-after-load 'org
   '(progn
+     (define-key org-mode-map (kbd "C-M-S-k") 'kill-line) ;; missing in DOOM!!!
      (define-key org-mode-map (kbd "C-M-S-o") 'hydra-org/body)
      (define-key org-mode-map (kbd "C-M-<") 'hydra-org-table/body)
      (define-key org-mode-map (kbd "C-M-S-h") 'hydra-hugo/body)
