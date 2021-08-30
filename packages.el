@@ -56,4 +56,5 @@
 (package! origami)
 (package! dired-open)
 
+;; (unpin! org-roam company-org-roam)
 ;; (package! ox-latex)

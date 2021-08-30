@@ -81,10 +81,16 @@
       '(("exe" . "wine") ("docx" . "libreoffice")
         ("doc" . "libreoffice") ("xlsx" . "libreoffice")
         ("xls" . "libreoffice")
+        ("pdf" . "evince")
         ("mp3" . "mpv")
         ("mp4" . "mpv")
         ("flv" . "mpv")
         ))
+
+(setq org-roam-directory "~/roam")
+(setq org-agenda-files '("~/org" "~/roam" "~/roam/daily"))
+(setq org-agenda-include-riary t)
+(setq diary-file "~/roam/etc/diary")
 ;; (map!
 ;;  ;mode dired
 ;;  :desc "create symbolic link" "S" #'dired-do-symlink
@@ -118,6 +124,14 @@
        :desc "browse builtin classes" "b" #'sclang-browse-definitions
        :desc "browse user extension classes" "e" #'sclang-extensions-gui)
       (:prefix-map ("l" . "latex")
+       (:prefix ("b" . "buffer")
+        ;;; TODO : replace org-journal-new-entry with real commands
+        :desc "pdflatex -> pdf" "p" #'pdflatex-compile-buffer
+        :desc "xelatex -> pdf" "x" #'xelatex-compile-buffer
+        :desc "lualatex -> pdf" "l" #'lualatex-compile-buffer
+        :desc "edit template" "e" #'org-journal-new-entry
+        :desc "reveal template path" "r" #'org-journal-new-entry
+        :desc "set template path" "t" #'org-journal-search)
        (:prefix ("s" . "subtree")
         :desc "pdflatex -> pdf" "p" #'org-journal-new-entry
         :desc "xelatex -> pdf" "x" #'org-journal-new-entry

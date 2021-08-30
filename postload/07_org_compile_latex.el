@@ -284,16 +284,21 @@ Only works in linux with epdfview installed."
   (interactive)
   (org-compile-latex-with-custom-framework))
 
-(defun compile-buffer-to-pdf ()
-  "Compile subtree to pdf."
+(defun pdflatex-compile-buffer ()
+  "Compile entire buffer to pdf using pdflatex."
   (interactive)
+  (setq org-latex-compiler "pdflatex")
   (org-compile-latex-with-custom-framework t))
 
+(defun xelatex-compile-buffer ()
+  "Compile entire buffer to pdf using xelatex."
+  (interactive)
+  (setq org-latex-compiler "xelatex")
+  (org-compile-latex-with-custom-framework t))
 ;;; ================================================================
 ;;; Keyboard shortcuts
 (global-set-key (kbd "C-M-S-c") 'org-compile-latex-with-custom-framework)
 
-()
 ;; (defhydra hydra-latex (:color red :columns 2)
 ;;   "latex hydra"
 ;;   ("l" compile-buffer-to-pdf "buffer->pdf")
