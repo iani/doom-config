@@ -97,6 +97,7 @@
 ;;  )
 
 (map! :leader
+      :desc "org-mark-ring-goto" "m g o" #'org-mark-ring-goto
       :desc "calendar" "o c" #'calendar
       :desc "calendar" "o C" #'calc
       :desc "find folder in project" "p F" #'projectile-find-dir
