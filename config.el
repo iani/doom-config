@@ -117,6 +117,8 @@
        :desc "reset server options" "o" #'sclang-reset-server-options)
       (:prefix-map ("j" . "sclang")
        :desc "switch to workspace" "w" #'sclang-switch-to-workspace
+       :desc "osc trace on" "t" #'sclang-osc-trace-on
+       :desc "osc trace off" "T" #'sclang-osc-trace-off
        :desc "show post buffer" "p" #'sclang-show-post-buffer
        :desc "recompile library" "l" #'sclang-recompile
        :desc "start sclang" "s" #'sclang-start

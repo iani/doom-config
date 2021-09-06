@@ -10,6 +10,16 @@
   (interactive)
   (async-shell-command " jackd -r -d alsa -r 44100"))
 
+(defun sclang-osc-trace-on ()
+  "Turn on OSCFunc trace"
+  (interactive)
+  (sclang-eval-string "OSCFunc.trace(true)"))
+
+(defun sclang-osc-trace-off ()
+  "Turn off OSCFunc trace"
+  (interactive)
+  (sclang-eval-string "OSCFunc.trace(false)"))
+
 (defun sclang-scundelify ()
   "Convert //: snippet blocks to regular style () sc blocks in document."
   (interactive)
