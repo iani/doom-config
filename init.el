@@ -153,7 +153,9 @@
         +journal
         +roam2
         +dragndrop
-        +present)
+        +present
+        +hugo
+        )
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
